@@ -7,7 +7,7 @@
                     <div class="col-1"></div>
                     <div class="col-3">
                         <a class="navbar-brand mx-auto d-table" href="../index.php">
-                            <img class="mr-3" src="../assets/images/logo_intero_w.png" alt="Dio bubu" height="100px">
+                            <img class="mr-3" src="../assets/images/logo_intero_w.png" alt="" height="100px">
                         </a>
                     </div>
                     <div class="col-4"></div>
