@@ -1,25 +1,25 @@
-    <!-- Check if the user is logged in -->
+    <?php if (!isset($_SESSION['auth'])) { ?>
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
 
-        <!-- End script -->
+        <?php } else { ?>
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm p-2">
 
 
-            <?php insert_csrf_token(); ?>
+            <?php } ?>
 
 
             <div class="container">
                 <a class="navbar-brand" href="../home">
 
-                    <!-- Check if the user is logged in -->
-                        <img src="../assets/images/logo.png" alt="" width="50" height="50" class="mr-3">
-                    <!-- End script or else -->
-                        <img src="../assets/images/logo.png" alt="" width="50" height="50" class="mr-3">
-                    <!-- End Else script -->
+                    <?php if (!isset($_SESSION['auth'])) { ?>
+                        <img src="../assets/images/logonotext.png" alt="" width="50" height="50" class="mr-3">
+                    <?php } else { ?>
+                        <img src="../assets/images/logonotextwhite.png" alt="" width="50" height="50" class="mr-3">
+                    <?php } ?>
 
-                    <!-- echo APP NAME -->
+                    <?php echo APP_NAME; ?>
 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,7 +41,7 @@
                             <a class="nav-link" href="../welcome">Welcome</a>
                         </li>
 
-                        <!--- Check if the user is logged in -->
+                        <?php if (!isset($_SESSION['auth'])) { ?>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="../contact">Contact Us</a>
@@ -55,7 +55,7 @@
                                 <a class="nav-link" href="../register">Signup</a>
                             </li>
 
-                        <!-- End script or else -->
+                        <?php } else { ?>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="../dashboard">Dashboard</a>
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
 
-                        <!-- End Else script -->
+                        <?php } ?>
 
 
 

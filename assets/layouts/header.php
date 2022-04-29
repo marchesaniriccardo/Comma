@@ -1,19 +1,29 @@
 <?php
-    require "../assets/setup/env.php";
-    require_once "../assets/setup/connessionedb.php";
-    require "../assets/includes/auth_functions.php";
-    require '../assets/includes/security_functions.php';
-    custom_session_start();
+
+session_start();
+
+require '../assets/setup/env.php';
+require '../assets/setup/db.inc.php';
+require '../assets/includes/auth_functions.php';
+require '../assets/includes/security_functions.php';
+
+if (isset($_SESSION['auth']))
+    $_SESSION['expire'] = ALLOWED_INACTIVITY_TIME;
+
+generate_csrf_token();
+check_remember_me();
 
 ?>
 
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title><?php echo APP_NAME ?></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?php echo APP_DESCRIPTION;  ?>">
+    <meta name="author" content="<?php echo APP_OWNER;  ?>">
 
     <title><?php echo TITLE . ' | ' . APP_NAME; ?></title>
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
@@ -24,11 +34,9 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="../assets/css/app.css">
     <link rel="stylesheet" href="custom.css" >
+
 </head>
+
 <body>
 
-    <!-- require navbar -->
-
-<?php
-    require"../assets/layouts/navbar.php";
-?>
+    <?php require 'navbar.php'; ?>
