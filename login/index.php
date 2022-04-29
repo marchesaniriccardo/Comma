@@ -5,9 +5,10 @@ include '../assets/layouts/header.php';
 check_logged_out();
 ?>
 
-<div class="centered-axis-x">
+<!-- FRONTEND: logo absolute main_col_left -->
+<!-- div class="centered-axis-x">
     <img src="../assets/images/logo_intero_w.png" alt="" height="100px">
-</div>
+</div -->
 
 <div class="row h-100">
     <!--- Left Column --->
@@ -25,8 +26,8 @@ check_logged_out();
                     <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
                     <sub class="text-danger">
                         <?php
-                            if (isset($_SESSION['ERRORS']['nouser']))
-                                echo $_SESSION['ERRORS']['nouser'];
+                        if (isset($_SESSION['ERRORS']['nouser']))
+                            echo $_SESSION['ERRORS']['nouser'];
                         ?>
                     </sub>
                 </div>

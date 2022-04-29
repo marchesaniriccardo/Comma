@@ -1,3 +1,9 @@
+body::before {
+    display: block;
+    content: '';
+    height: 135px;
+}
+
 html,
 body {
     height: 100%;
@@ -5,6 +11,8 @@ body {
     padding: 0px;
 }
 
+
+/* FRONTEND: logo absolute main_col_left
 .centered-axis-x {
     position: absolute;
     left: 25%;
@@ -17,10 +25,12 @@ body {
         transform: translate(25%, 0);
     }
 }
+*/
 
-#left_col{
+#left_col {
     background-color: #0C4B8E;
 }
-#right_col{
+
+#right_col {
     background-color: #041F4F;
 }
