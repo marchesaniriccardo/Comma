@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.centered-axis-x {
+    position: absolute;
+    left: 25%;
+    top: 3%;
+    transform: translate(-50%, 0);
+}
+
+@media only screen and (max-width: 992px) {
+    .centered-axis-x {
+        transform: translate(25%, 0);
+    }
+}
+
+#left_col{
+    background-color: #0C4B8E;
+}
+#right_col{
+    background-color: #041F4F;
+}
